@@ -1,0 +1,102 @@
+/* CSS cho nút "Thêm vào giỏ hàng" */
+.add-to-cart {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Hiệu ứng màu nền */
+}
+
+.add-to-cart:hover {
+    background-color: #0056b3; /* Màu nền thay đổi khi hover */
+}
+
+
+body, h1, ul {
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+
+
+header {
+    background-color: #3f3131;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    
+}
+
+nav li {
+    display: inline;
+    margin-right: 10px;
+}
+
+
+.product {
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    margin: 20px;
+}
+
+.product img {
+    max-width: 30%;
+}
+
+.price {
+    font-weight: bold;
+    color: #333;
+}
+
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+
+
+  .button2 {background-color: #cd823d;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+  .button1 {background-color: #cd823d;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+a[href^='gmail.com']::before {
+    content: '📧 ';
+  }
+  
+  a[href^='tel']::before {
+    content: '📞 ';
+  }
+
+
+
+

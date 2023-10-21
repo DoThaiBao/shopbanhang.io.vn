@@ -96,7 +96,43 @@ a[href^='gmail.com']::before {
   a[href^='tel']::before {
     content: '📞 ';
   }
-
+  
+.home1{
+    border: none;
+    color: #cd823d;
+    padding: 5px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: auto;
+    cursor: pointer;
+    
+}
+.new1{
+    border: none;
+    color: #cd823d;
+    padding: 5px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: auto;
+    cursor: pointer;
+    
+}
+.ct1{
+    border: none;
+    color: #cd823d;
+    padding: 5px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: auto;
+    cursor: pointer;
+    
+}
 
 
 

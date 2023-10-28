@@ -1,7 +1,7 @@
 /* CSS cho nút "Thêm vào giỏ hàng" */
 .add-to-cart {
     background-color: #007bff;
-    color: white;
+    color: rgb(246, 246, 246);
     padding: 10px 20px;
     border: none;
     cursor: pointer;
@@ -9,7 +9,7 @@
 }
 
 .add-to-cart:hover {
-    background-color: #0056b3; /* Màu nền thay đổi khi hover */
+    background-color: #0058b5; /* Màu nền thay đổi khi hover */
 }
 
 

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Đăng nhập / Đăng ký</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1 class="title">SHOP ĐỒNG NÁT</h1>
+     <!-- Thêm phần tử để hiển thị thông báo -->
+     <div id="notification" class="notification"></div>
+
+    <!-- Thêm menu dropdown để chọn ngôn ngữ -->
+    <div class="language-selector">
+        <select id="language">
+            <option value="vi">Tiếng Việt</option>
+            <option value="en">Tiếng Anh</option>
+            <option value="cn">Tiếng Trung</option>
+            <option value="jp">Tiếng Nhật</option>
+            <!-- Thêm các ngôn ngữ khác tại đây -->
+        </select>
+    </div>
+
+    <div class="form" id="login-form">
+        <h2>Đăng nhập</h2>
+        <form action="login.php" method="post">
+            <input type="text" name="username" placeholder="Tên đăng nhập" required>
+            <input type="password" name="password" placeholder="Mật khẩu" required>
+            <input type="submit" value="Đăng nhập">
+        </form>
+        <button id="register-btn">Đăng ký</button>
+    </div>
+
+    <div class="form" id="register-form" style="display: none;">
+        <h2>Đăng ký</h2>
+        <form action="register.php" method="post">
+            <input type="text" name="username" placeholder="Tên đăng nhập" required>
+            <input type="password" name="password" placeholder="Mật khẩu" required>
+            <input type="text" name="student-id" placeholder="Mã sinh viên" required>
+            <input type="email" name="email" placeholder="Gmail" required>
+            <input type="submit" value="Đăng ký">
+        </form>
+        <button id="login-btn">Đăng nhập</button>
+    </div>
+
+    <div id="chat-bubble">
+        <img src="/path/to/chat-icon.png" alt="Chat với tôi qua">
+    </div>
+    
+    <div id="support-panel" style="display: none;">
+        <!-- Thêm tiêu đề mới ở đây -->
+        <h2>Tôi có gì cho bạn</h2>
+    
+        <!-- Nội dung của bảng hỗ trợ ở đây -->
+        <div id="chat-messages">
+            <!-- Các tin nhắn chat sẽ xuất hiện ở đây -->
+        </div>
+        <form id="chat-form">
+            <input type="text" id="chat-input" placeholder="Nhập tin nhắn của bạn ở đây">
+            <input type="submit" value="Gửi">
+        </form>
+    </div>
+
+    <!-- Thêm script để xử lý sự kiện nhấn nút -->
+    <script src="script.js"></script>
+</body>
+</html>

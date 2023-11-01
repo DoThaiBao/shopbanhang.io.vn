@@ -1,3 +1,9 @@
+// Hiển thị icon trong vòng 3 giây rồi ẩn đi
+var loader = document.getElementById("loader");
+setTimeout(function() {
+    loader.className += " hide"; // thêm class "hide" vào loader
+}, 3000);
+
 document.getElementById('register-btn').addEventListener('click', function() {
     document.getElementById('login-form').style.display = 'none';
     document.getElementById('register-form').style.display = 'block';
@@ -8,6 +14,31 @@ document.getElementById('login-btn').addEventListener('click', function() {
     document.getElementById('login-form').style.display = 'block';
 });
 
+document.getElementById('login-form').addEventListener('submit', function(event) {
+    // Ngăn chặn hành vi mặc định của form
+    event.preventDefault();
+
+    // Lấy dữ liệu từ form
+    var username = document.querySelector('#login-form input[name="username"]').value;
+    var password = document.querySelector('#login-form input[name="password"]').value;
+
+    // Kiểm tra xem mật khẩu có đáp ứng các yêu cầu không
+    var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    if (!passwordRegex.test(password)) {
+        alert('Mật khẩu phải có ít nhất 8 ký tự, bao gồm cả chữ và số.');
+        return;
+    }
+
+    // Lưu thông tin đăng nhập vào localStorage
+    localStorage.setItem('username', username);
+    localStorage.setItem('password', password);
+
+    // Kiểm tra thông tin đăng nhập ở đây
+
+    // Nếu thông tin đăng nhập hợp lệ, chuyển hướng người dùng đến 'shop/index.html'
+    window.location.href = 'shop/index.html';
+});
+
 document.getElementById('register-form').addEventListener('submit', function(event) {
     // Ngăn chặn hành vi mặc định của form
     event.preventDefault();
@@ -15,11 +46,39 @@ document.getElementById('register-form').addEventListener('submit', function(eve
     // Lấy dữ liệu từ form
     var username = document.querySelector('#register-form input[name="username"]').value;
     var password = document.querySelector('#register-form input[name="password"]').value;
+    var email = document.querySelector('#register-form input[name="email"]').value;
 
     // Tạo một đối tượng FormData để chứa dữ liệu
     var formData = new FormData();
     formData.append('username', username);
     formData.append('password', password);
+
+    
+
+    // Kiểm tra xem email có kết thúc bằng "@gmail.com" hoặc @(...).edu.vn không
+    var emailRegex = /^[\w-]+(\.[\w-]+)*@(gmail\.com|[\w-]+\.edu\.vn)$/;
+    if (!emailRegex.test(email)) {
+        alert('Web chỉ nhận email có đuôi gmail hoặc edu');
+        return;
+    }
+
+    // Kiểm tra xem mật khẩu có đáp ứng các yêu cầu không
+    var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    if (!passwordRegex.test(password)) {
+        alert('Mật khẩu phải có ít nhất 8 ký tự, bao gồm cả chữ và số.');
+        return;
+    }
+
+    // Lưu thông tin đăng nhập vào localStorage
+    localStorage.setItem('username', username);
+    localStorage.setItem('password', password);
+
+    // Kiểm tra xem thông tin đăng ký có hợp lệ không
+    // Nếu hợp lệ, hiển thị thông báo và chuyển hướng người dùng
+    if (username !== '' && password !== '' && email !== '') {
+        alert('Đăng ký thành công!');
+        window.location.href = 'shop/index.html';
+    }
 
     // Gửi yêu cầu POST đến /register
     fetch('/register', {
@@ -207,5 +266,51 @@ function changeTitleColor() {
 // Thay đổi màu của tiêu đề mỗi giây
 setInterval(changeTitleColor, 1000);
 
+const fs = require('fs');
+
+// Hàm để đăng ký một người dùng mới
+function register(username, password) {
+    // Tạo một đối tượng cho người dùng mới
+    var user = {
+        username: username,
+        password: password
+    };
+
+    // Chuyển đổi đối tượng người dùng thành JSON
+    var userJSON = JSON.stringify(user);
+
+    // Ghi JSON vào một file mới với tên người dùng là tên của file
+    fs.writeFile(username + '.json', userJSON, function(err) {
+        if (err) throw err;
+        console.log('Đăng ký người dùng thành công!');
+    });
+}
+
+// Hàm để đăng nhập một người dùng
+function login(username, password) {
+    // Đọc file của người dùng
+    fs.readFile(username + '.json', function(err, data) {
+        if (err) throw err;
+
+        // Phân tích dữ liệu JSON từ file
+        var user = JSON.parse(data);
+
+        // Kiểm tra xem mật khẩu nhập vào có khớp với mật khẩu của người dùng không
+        if (password === user.password) {
+            console.log('Đăng nhập thành công!');
+        } else {
+            console.log('Mật khẩu không chính xác.');
+        }
+    });
+}
+function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    }
+    
+    function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    }
 
 //https://th.bing.com/th/id/OIG.3ojri98LmCIojo70RvE9?pid=ImgGn

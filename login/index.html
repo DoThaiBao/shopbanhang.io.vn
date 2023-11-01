@@ -1,3 +1,5 @@
+<!--hình ảnh loading đẹp:https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXBjMHE5azNvNGd5enJiOXVjazUzMGY4MTR4aWdwbG16Y2N1cTR2cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/gLKmYsmVpKhYQD327E/giphy.gif -->>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,6 +7,28 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+    <!-- Lớp bao chứa icon -->
+    <div class="loader-wrapper" id="loader">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXBjMHE5azNvNGd5enJiOXVjazUzMGY4MTR4aWdwbG16Y2N1cTR2cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/gLKmYsmVpKhYQD327E/giphy.gif" width="40%" height="50%">
+    </div>
+
+    <!-- Nội dung trang web -->
+
+    <!-- bảng menu -->
+
+    <div id="mySidebar" class="sidebar">
+        <h1 class="menu-title">Bảng Menu</h1>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="#">Menu1</a>
+        <a href="#">Menu2</a>
+        <a href="#">Menu3</a>
+        <a href="#">Menu4</a>
+        </div>
+        
+        <div id="main">
+        <button class="openbtn" onclick="openNav()">☰ Mở Menu</button>  
+        </div>
+
     <h1 class="title">SHOP ĐỒNG NÁT</h1>
      <!-- Thêm phần tử để hiển thị thông báo -->
      <div id="notification" class="notification"></div>
@@ -20,6 +44,10 @@
         </select>
     </div>
 
+    <footer> <!-- Thêm dòng này -->
+        &copy; 2023 Bản quyền thuộc về Góc Video <!-- Thêm dòng này -->
+    </footer>
+
     <div class="form" id="login-form">
         <h2>Đăng nhập</h2>
         <form action="login.php" method="post">
@@ -34,7 +62,7 @@
         <h2>Đăng ký</h2>
         <form action="register.php" method="post">
             <input type="text" name="username" placeholder="Tên đăng nhập" required>
-            <input type="password" name="password" placeholder="Mật khẩu" required>
+            <input type="password" name="password" placeholder5="Mật khẩu" required>
             <input type="text" name="student-id" placeholder="Mã sinh viên" required>
             <input type="email" name="email" placeholder="Gmail" required>
             <input type="submit" value="Đăng ký">
@@ -43,7 +71,7 @@
     </div>
 
     <div id="chat-bubble">
-        <img src="/path/to/chat-icon.png" alt="Chat với tôi qua">
+        <img src="https://media1.giphy.com/media/ifGvR6XgnlIwWljA7b/200w.webp?cid=ecf05e47fcxvzw1ryjfawrq177ekz5opscblzx3ombul7r5v&ep=v1_gifs_related&rid=200w.webp&ct=s" alt="Chat với tôi qua">
     </div>
     
     <div id="support-panel" style="display: none;">
@@ -62,5 +90,6 @@
 
     <!-- Thêm script để xử lý sự kiện nhấn nút -->
     <script src="script.js"></script>
+    <script src="users.js"></script>
 </body>
 </html>

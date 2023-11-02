@@ -1,0 +1,3 @@
+Nhớ cài đặt server Node.js và Express để đảm bảo chạy được server:
+Windows Sercuryti có khả năng sẽ chặn 1 ssos hoạt đọng của server nên hãy tắt nó đi khi hoạt động 
+https://code.tutsplus.com/vi/code-your-first-api-with-nodejs-and-express-set-up-the-server--cms-31698t

@@ -1,26 +1,23 @@
-/* CSS cho nút "Thêm vào giỏ hàng" */
-.add-to-cart {
-    background-color: #007bff;
-    color: rgb(246, 246, 246);
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Hiệu ứng màu nền */
-}
+
 
 .add-to-cart:hover {
-    background-color: #0058b5; /* Màu nền thay đổi khi hover */
+    background-color: #ffffff; /* Màu nền thay đổi khi hover */
 }
 
 
 body, h1, ul {
     margin: 0;
     padding: 0;
+    border: none;
+
     
 }
-
-
-
+h2{
+    margin-right: 50%;
+}
+p{
+    margin-right: 50%;
+}
 
 header {
     background-color: #3f3131;
@@ -48,12 +45,13 @@ nav li {
 }
 
 .product img {
-    max-width: 30%;
+    width: 30%;
+    margin-right: 100%;
+    border: none;
 }
 
 .price {
-    font-weight: bold;
-    color: #333;
+    height: 30px;
 }
 
 
@@ -74,8 +72,9 @@ footer {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 3px 2px;
     cursor: pointer;
+    margin-right: 100%;
 }
   .button1 {background-color: #cd823d;
     border: none;
@@ -85,8 +84,11 @@ footer {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 30px 15px;
     cursor: pointer;
+   margin-right: 100%;
+
+
 }
 
 a[href^='gmail.com']::before {
